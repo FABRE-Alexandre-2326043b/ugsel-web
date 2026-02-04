@@ -1,0 +1,5 @@
+site_name: Documentation UGSEL Web
+theme:
+  name: material
+nav:
+  - Accueil: index.md

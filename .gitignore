@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+db.sqlite3
+.env
+.venv/
+.pytest_cache/
+htmlcov/
+dist/
+site/
+.DS_Store
+.idea/
+.vscode/
+postgres_data/
