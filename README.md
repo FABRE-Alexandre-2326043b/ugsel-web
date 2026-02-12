@@ -31,11 +31,14 @@ Web application to manage sports competitions (individual and team), student reg
     ```
    *The first time, it may take a few minutes to build the images and install Playwright.*
 
+3. **Create Super User**
+    ```bash
+    docker compose exec web python manage.py createsuperuser
+    ```
+
 3. **Access the application**
    * **Website** : [http://localhost:8000](http://localhost:8000)
    * **Administration** : [http://localhost:8000/admin](http://localhost:8000/admin)
-     * *Login* : `admin”
-     * *Password* : `password123`
    * **Technical Documentation** : [http://localhost:8001](http://localhost:8001)
 
 ---

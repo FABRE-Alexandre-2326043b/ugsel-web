@@ -6,11 +6,11 @@ This project is an application for managing school sports competitions.
 
 If you are a developer or proofreader, we recommend this path:
 
-1. Understand our technical choices in the**[Software Architecture](architecture.md)*.
-2. Check the code’s robustness via **[Testing Strategy](tests.md)*.
-3. View the data schema in section **[Database](database.md)*.
+1. Understand our technical choices in the **[Software Architecture](architecture.md)**.
+2. Check the code’s robustness via **[Testing Strategy](tests.md)**.
+3. View the data schema in section **[Database](database.md)**.
 
-If you are a user, we recommend the **[User Guide](user_guide.md)*.
+If you are a user, we recommend the **[User Guide](user_guide.md)**.
 
 ---
 
