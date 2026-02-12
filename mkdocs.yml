@@ -1,0 +1,14 @@
+site_name: UGSEL Web Documentation
+theme:
+  name: material
+  language: fr
+  palette:
+    primary: indigo
+    accent: indigo
+
+nav:
+  - Accueil: index.md
+  - Architecture: architecture.md
+  - Base de Données: database.md
+  - Tests: tests.md
+  - Guide Utilisateur: user_guide.md

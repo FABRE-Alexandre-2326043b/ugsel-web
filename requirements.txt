@@ -1,0 +1,23 @@
+# Core Framework
+Django==5.0.1
+psycopg2-binary==2.9.9
+django-htmx==1.17.0
+
+# Server
+gunicorn==21.2.0
+
+# Quality & Testing
+pytest==8.0.0
+pytest-django==4.7.0
+pytest-cov==4.1.0
+pytest-bdd==7.0.1
+playwright==1.41.0
+ruff==0.1.14
+black==24.1.1
+xenon==0.9.1
+mypy==1.8.0
+radon==6.0.1
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.5.3
