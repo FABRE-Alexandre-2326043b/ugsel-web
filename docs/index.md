@@ -24,7 +24,7 @@ If you are a user, we recommend the **[User Guide](user_guide.md)**.
 - **Backend**: Django 5 + Python 3.12
 - **Database**: SQLite (Dev) / PostgreSQL (Prod)
 - **Tests**: Pytest, Playwright (E2E), Pytest-BDD
-- **Quality**: Flake8, Black, Radon (A+)
+- **Quality**: Flake8, Ruff/Black (Linter), Radon (A+)
 
 ## Launch the project
 
