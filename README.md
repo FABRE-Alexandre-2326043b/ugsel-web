@@ -31,11 +31,14 @@ Web application to manage sports competitions (individual and team), student reg
     ```
    *The first time, it may take a few minutes to build the images and install Playwright.*
 
+3. **Create Super User**
+    ```bash
+    docker compose exec web python manage.py createsuperuser
+    ```
+
 3. **Access the application**
    * **Website** : [http://localhost:8000](http://localhost:8000)
    * **Administration** : [http://localhost:8000/admin](http://localhost:8000/admin)
-     * *Login* : `admin”
-     * *Password* : `password123`
    * **Technical Documentation** : [http://localhost:8001](http://localhost:8001)
 
 ---
@@ -76,12 +79,6 @@ To run the tests, use the following command in a separate terminal:
 ### 1. All tests (Recommended)
 
 ```bash
-docker compose exec web pytest
-```
-
-*Note: If you encounter a "SynchronousOnlyOperation" error, use :*
-
-```bash
 docker compose exec -e DJANGO_ALLOW_ASYNC_UNSAFE=true web pytest
 ```
 ### 2. Tests by category
@@ -100,6 +97,22 @@ docker compose exec web pytest tests/unit
     ```
 * **End-to-End** (Admin Interface - Robot Playwright):
     ```bash
+    docker compose exec --user root web bash -c "apt-get update && apt-get install -y \
+    libgtk-3-0 \
+    libasound2 \
+    libgbm1 \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libx11-xcb1 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxfixes3 \
+    libxrandr2 \
+    fonts-liberation \
+    fonts-unifont \
+    fonts-noto-color-emoji \
+    && playwright install chromium"
+    docker compose exec web pip install pytest-playwright
     docker compose exec -e DJANGO_ALLOW_ASYNC_UNSAFE=true web pytest tests/final
     ```
 ---
