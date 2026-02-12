@@ -1,0 +1,37 @@
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=dev_secret_key_change_in_prod
+      - DB_NAME=ugsel_db
+      - DB_USER=ugsel_user
+      - DB_PASSWORD=ugsel_password
+      - DB_HOST=db
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=ugsel_db
+      - POSTGRES_USER=ugsel_user
+      - POSTGRES_PASSWORD=ugsel_password
+
+  docs:
+    image: squidfunk/mkdocs-material
+    ports:
+      - "8001:8000"
+    volumes:
+      - .:/docs
+    command: serve -a 0.0.0.0:8000
+
+volumes:
+  postgres_data:
