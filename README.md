@@ -10,7 +10,7 @@ Application web permettant de gérer les compétitions sportives (individuelles 
 
 ---
 
-## 🚀 Démarrage Rapide
+## Démarrage Rapide
 
 ### Prérequis
 * **Docker** et **Docker Compose** installés.
@@ -22,11 +22,12 @@ Application web permettant de gérer les compétitions sportives (individuelles 
    ```bash
    git clone https://github.com/votre-compte/ugsel-web.git
    cd ugsel-web
+   ```
 
 2. **Lancer l'environnement (Build & Run)**
-
+    ```bash
     docker compose up --build
-
+    ```
    *La première fois, cela peut prendre quelques minutes pour construire les images et installer Playwright.*
 
 3. **Accéder à l'application**
@@ -38,7 +39,7 @@ Application web permettant de gérer les compétitions sportives (individuelles 
 
 ---
 
-## 🏗️ Architecture et Choix Techniques
+## Architecture et Choix Techniques
 
 Le projet suit une architecture modulaire respectant les principes **SOLID** et **KISS**.
 
@@ -47,7 +48,7 @@ Le projet suit une architecture modulaire respectant les principes **SOLID** et 
 * **Frontend** : Django Templates (Admin) + HTMX (prévu).
 * **Qualité** :
     * **Pre-commit Hook** : Un "Gardien" empêche tout commit si la qualité du code (Flake8, Radon) est insuffisante ou si les tests échouent.
-    * **CI/CD** : Configuration prête pour GitLab CI / GitHub Actions.
+    * **CI/CD** : Configuration prête pour GitHub Actions.
 
 ### Structure du projet
 
@@ -65,7 +66,7 @@ Le projet suit une architecture modulaire respectant les principes **SOLID** et 
 
 ---
 
-## 🧪 Stratégie de Tests
+## Stratégie de Tests
 
 Le projet dispose d'une couverture de tests complète (> 90%).
 
@@ -73,19 +74,52 @@ Pour lancer les tests, utilisez la commande suivante dans un terminal séparé :
 
 ### 1. Tous les tests (Recommandé)
 
-    docker compose exec web pytest
+```bash
+docker compose exec web pytest
+```
 
 *Note : Si vous rencontrez une erreur "SynchronousOnlyOperation", utilisez :*
 
-    docker compose exec -e DJANGO_ALLOW_ASYNC_UNSAFE=true web pytest
-
+```bash
+docker compose exec -e DJANGO_ALLOW_ASYNC_UNSAFE=true web pytest
+```
 ### 2. Tests par catégorie
+
+```bash
+docker compose exec web pytest tests/unit
+```
+
 * **Unitaires** (Logique métier) :
-
+    ```bash
     docker compose exec web pytest tests/unit
-
+    ```
 * **Comportementaux** (BDD - Scénarios métier) :
-
+    ```bash
     docker compose exec web pytest tests/behavior
+    ```
+* **End-to-End** (Interface Admin - Robot Playwright) :
+    ```bash
+    docker compose exec -e DJANGO_ALLOW_ASYNC_UNSAFE=true web pytest tests/final
+    ```
+---
 
-* **End-to-End** (Interface Admin - Robot Play
+## Commandes de Gestion
+
+### Vérifier la Qualité du Code
+Pour obtenir un rapport sur la complexité cyclomatique et la maintenabilité :
+
+```bash
+docker compose exec web bash check_quality.sh
+```
+---
+
+## Documentation
+
+Une documentation complète (Architecture, User Guide, Database, Index, Tests) est générée automatiquement via **MkDocs**.
+Elle est accessible sur le port **8001** lorsque le conteneur tourne.
+
+---
+
+## Auteur
+
+ **Alexandre FABRE** - *Lead Developer*
