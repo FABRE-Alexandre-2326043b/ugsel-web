@@ -32,6 +32,7 @@ Web application to manage sports competitions (individual and team), student reg
    *The first time, it may take a few minutes to build the images and install Playwright.*
 
 3. **Create Super User**
+    Django needs it to let you access the administration interface.
     ```bash
     docker compose exec web python manage.py createsuperuser
     ```
@@ -47,11 +48,20 @@ Web application to manage sports competitions (individual and team), student reg
 
 The project follows a modular architecture respecting the principles **SOLID** and **KISS**.
 
-* **Backend**: Django 5 (Python 3.12).
+* **Backend**: Django 5 (Python 3.12) for:
+    * **The "free" Admin**: There is many reference tables (Sports, Categories, Events, Establishments). Django automatically generates a complete and secure admin interface to manage this data without writing a single line of HTML/CSS code. It’s a huge saving in maintenance time.
+
+    * **Native security**: The old code uses addslashes and concatenates SQL strings (risk of SQL injection). Django uses an ORM (Object-Relational Mapping) that protects by default against SQL injections, XSS flaws and CSRF.
+
+    * **Imposed structure (MVT)**: Unlike the ugselweb.php file that mixes everything (BDD connection, business logic, HTML display), Django forces separation of responsibilities. A developer taking over the project in 5 years will know exactly where to look.
+
 * **Database** : SQLite (Dev) / PostgreSQL (Prod).
 * **Frontend** : Django Templates (Admin) + HTMX (planned).
 * **Quality** :
-    * **Pre-commit Hook** : A "Guardian" prevents any commit if the code quality (Flake8, Radon) is insufficient or if the tests fail.
+    * **Pre-commit Hook** : A "Guardian" with a Linter prevents any commit if the code quality (Flake8, Radon) is insufficient or if the tests fail. You can test with
+    ```bash
+    git commit --allow-empty -m "Guardian Test"
+    ```
     * **CI/CD** : Setup ready for GitHub Actions.
 
 ### Project structure
@@ -131,6 +141,19 @@ docker compose exec web bash check_quality.sh
 
 A complete documentation (Architecture, User Guide, Database, Index, Tests) is automatically generated via **MkDocs**.
 It is accessible on the port **8001** when the container turns.
+
+## Technical evaluation grid
+
+Techno Choice: Python/Django/Docker  
+SOLID: Modular Architecture (separate apps)
+KISS: Auto-generated admin, no heavy JS framework  
+Documentation: BDD (Gherkin) + possible generated PDF  
+Linter: Ruff/Black + Pre-commit hook  
+Metrics: Radon (Maintainability) + Coverage  
+Branches: Git Flow & Protection by Hook  
+Unit Tests: Pytest (Models)  
+Tests Behavior: Pytest-BDD (Gherkin)  
+Final Tests: Playwright (E2E)  
 
 ---
 
