@@ -1,4 +1,5 @@
-# 🏆 UGSEL Web - Gestion des Compétitions Scolaires
+# 🏆 UGSEL Web - Management of School Competitions
+
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square&logo=python)
 ![Django](https://img.shields.io/badge/Django-5.0-green?style=flat-square&logo=django)
@@ -6,107 +7,107 @@
 ![Tests](https://img.shields.io/badge/Tests-Pytest%20%7C%20Playwright-brightgreen?style=flat-square)
 ![Quality](https://img.shields.io/badge/Code%20Quality-A%2B-success?style=flat-square)
 
-Application web permettant de gérer les compétitions sportives (individuelles et par équipe), les inscriptions des élèves et l'organisation des championnats pour l'UGSEL.
+Web application to manage sports competitions (individual and team), student registrations and the organization of championships for the UGSEL.
 
 ---
 
-## Démarrage Rapide
+## Quick Start
 
-### Prérequis
-* **Docker** et **Docker Compose** installés.
-* C'est tout ! (Pas besoin de Python ou PostgreSQL sur votre machine).
+### Prerequisites
+* **Docker** and **Docker Compose** installed.
+* That’s it! (No need for Python or PostgreSQL on your machine).
 
 ### Installation
 
-1. **Cloner le projet**
+1. **Clone the project**
    ```bash
    git clone https://github.com/votre-compte/ugsel-web.git
    cd ugsel-web
    ```
 
-2. **Lancer l'environnement (Build & Run)**
+2. **Launch the environment (Build & Run)**
     ```bash
     docker compose up --build
     ```
-   *La première fois, cela peut prendre quelques minutes pour construire les images et installer Playwright.*
+   *The first time, it may take a few minutes to build the images and install Playwright.*
 
-3. **Accéder à l'application**
-   * **Site Web** : [http://localhost:8000](http://localhost:8000)
+3. **Access the application**
+   * **Website** : [http://localhost:8000](http://localhost:8000)
    * **Administration** : [http://localhost:8000/admin](http://localhost:8000/admin)
-     * *Login* : `admin`
+     * *Login* : `admin”
      * *Password* : `password123`
-   * **Documentation Technique** : [http://localhost:8001](http://localhost:8001)
+   * **Technical Documentation** : [http://localhost:8001](http://localhost:8001)
 
 ---
 
-## Architecture et Choix Techniques
+## Architecture and Technical Choices
 
-Le projet suit une architecture modulaire respectant les principes **SOLID** et **KISS**.
+The project follows a modular architecture respecting the principles **SOLID** and **KISS**.
 
-* **Backend** : Django 5 (Python 3.12).
-* **Base de Données** : SQLite (Dev) / PostgreSQL (Prod).
-* **Frontend** : Django Templates (Admin) + HTMX (prévu).
-* **Qualité** :
-    * **Pre-commit Hook** : Un "Gardien" empêche tout commit si la qualité du code (Flake8, Radon) est insuffisante ou si les tests échouent.
-    * **CI/CD** : Configuration prête pour GitHub Actions.
+* **Backend**: Django 5 (Python 3.12).
+* **Database** : SQLite (Dev) / PostgreSQL (Prod).
+* **Frontend** : Django Templates (Admin) + HTMX (planned).
+* **Quality** :
+    * **Pre-commit Hook** : A "Guardian" prevents any commit if the code quality (Flake8, Radon) is insufficient or if the tests fail.
+    * **CI/CD** : Setup ready for GitHub Actions.
 
-### Structure du projet
+### Project structure
 
     .
-    ├── config/             # Réglages globaux (Settings, URLS)
+    ├── config/   # Global settings (Settings, URLS)
     ├── src/
-    │   └── core/           # Cœur métier (Models, Services)
+    │    └── core/   # Core business (Models, Services)
     ├── tests/
-    │   ├── unit/           # Tests unitaires (Models)
-    │   ├── behavior/       # Tests BDD (Gherkin/Cucumber)
-    │   └── final/          # Tests E2E (Playwright)
-    ├── docs/               # Documentation MkDocs
-    ├── docker-compose.yml  # Orchestration des conteneurs
-    └── manage.py           # Point d'entrée Django
+    │   ├── unit/   # Unit tests (Models)
+    │   ├── behavior/   # BDD Tests (Gherkin/Cucumber)
+    │   └── final/   # E2E Tests (Playwright)
+    ├── docs/   # Documentation MkDocs
+    ├── docker-compose.yml  # Orchestration of containers
+    └── manage.py   # Django entry point
 
 ---
 
-## Stratégie de Tests
+## Test Strategy
 
-Le projet dispose d'une couverture de tests complète (> 90%).
+The project has complete test coverage (> 90%).
 
-Pour lancer les tests, utilisez la commande suivante dans un terminal séparé :
+To run the tests, use the following command in a separate terminal:
 
-### 1. Tous les tests (Recommandé)
+### 1. All tests (Recommended)
 
 ```bash
 docker compose exec web pytest
 ```
 
-*Note : Si vous rencontrez une erreur "SynchronousOnlyOperation", utilisez :*
+*Note: If you encounter a "SynchronousOnlyOperation" error, use :*
 
 ```bash
 docker compose exec -e DJANGO_ALLOW_ASYNC_UNSAFE=true web pytest
 ```
-### 2. Tests par catégorie
+### 2. Tests by category
 
 ```bash
 docker compose exec web pytest tests/unit
 ```
 
-* **Unitaires** (Logique métier) :
+* **Unitaries** (Business logic):
     ```bash
     docker compose exec web pytest tests/unit
     ```
-* **Comportementaux** (BDD - Scénarios métier) :
+* **Behavioral** (BDD - Business scenarios):
     ```bash
     docker compose exec web pytest tests/behavior
     ```
-* **End-to-End** (Interface Admin - Robot Playwright) :
+* **End-to-End** (Admin Interface - Robot Playwright):
     ```bash
     docker compose exec -e DJANGO_ALLOW_ASYNC_UNSAFE=true web pytest tests/final
     ```
 ---
 
-## Commandes de Gestion
+## Management Orders
 
-### Vérifier la Qualité du Code
-Pour obtenir un rapport sur la complexité cyclomatique et la maintenabilité :
+### Check Code Quality
+To obtain a report on cyclomatic complexity and maintainability:
 
 ```bash
 docker compose exec web bash check_quality.sh
@@ -115,11 +116,11 @@ docker compose exec web bash check_quality.sh
 
 ## Documentation
 
-Une documentation complète (Architecture, User Guide, Database, Index, Tests) est générée automatiquement via **MkDocs**.
-Elle est accessible sur le port **8001** lorsque le conteneur tourne.
+A complete documentation (Architecture, User Guide, Database, Index, Tests) is automatically generated via **MkDocs**.
+It is accessible on the port **8001** when the container turns.
 
 ---
 
-## Auteur
+## Author
 
  **Alexandre FABRE** - *Lead Developer*

@@ -1,15 +1,15 @@
-# Stratégie de Tests
+# Test Strategy
 
-Le projet maintient une couverture de code > 90%.
+The project maintains code coverage > 90%.
 
-## Types de tests
-1. **Unitaires (`tests/unit`)**: Vérifient chaque modèle isolément.
-2. **Comportementaux (`tests/behavior`)**: Scénarios Gherkin (BDD).
-3. **End-to-End (`tests/final`)**: Simulation utilisateur réel avec Playwright.
+## Types of tests
+1. **Unitaires (`tests/unit>)**: Check each model separately.
+2. **Behavioral (`tests/behavior`)*: Gherkin Scenarios (BDD).
+3. **End-to-End (`tests/final>)**: Real user simulation with Playwright.
 
-## Lancer les tests
+## Launch the tests
 ```bash
 docker compose exec web pytest
-```
+``>
 
-[Retour à l'accueil](index.md)
+[Return to home page](index.md)

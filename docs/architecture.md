@@ -1,16 +1,16 @@
-# Architecture Logicielle
+# Software Architecture
 
-Le projet respecte les principes **SOLID** et une architecture modulaire.
+The project respects the principles **SOLID** and a modular architecture.
 
-## Structure des Dossiers
-- `config/`: Réglages globaux (Settings, URLS)
-- `src/core/`: Application principale (Modèles, Commandes)
-- `tests/`: Stratégie de tests complète (Unit, Behavior, E2E)
+## Folder Structure
+- `config/>: Global settings (Settings, URLS)
+- `src/core/>: Main application (Templates, Commands)
+- `tests/>: Complete test strategy (Unit, Behavior, E2E)
 
-## Diagramme de Classe (Simplifié)
-- **Sport**: Définit l'activité (ex: Judo, Foot)
-- **Epreuve**: Une sous-catégorie (ex: 100m, Saut)
-- **Competition**: L'événement physique
-- **Championnat**: Le regroupement logique
+## Class Diagram (Simplified)
+- **Sport**: Defines the activity (ex: Judo, Foot)
+- **Test**: A sub-category (ex: 100m, Jump)
+- **Competition**: The physical event
+- **Championship**: The logical grouping
 
-[Retour à l'accueil](index.md)
+[Return to home page](index.md)

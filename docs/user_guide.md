@@ -1,17 +1,17 @@
-# Guide Utilisateur
+# User Guide
 
-## 1. Accès à l'Administration
-L'interface de gestion est accessible via `/admin`.
-* **Login** : admin / password123 (en dev)
+## 1. Access to the Administration
+The management interface is accessible via `/admin`.
+* **Login** : admin / password123 (in dev)
 
 
-## 2. Créer une Compétition
-1. Allez dans **Sports** et créez le sport (ex: Rugby).  
+## 2. Create a Competition
+1. Go to **Sports** and create the sport (ex: Rugby).  
 
-2. Allez dans **Competitions** et cliquez sur "Ajouter".  
+2. Go to **Competitions** and click on "Add".  
 
-3. Sélectionnez les épreuves associées.  
+3. Select the associated proofs.  
 
-4. Enregistrez.  
+4. Record.  
 
-[Retour à l'accueil](index.md)
+[Return to home page](index.md)

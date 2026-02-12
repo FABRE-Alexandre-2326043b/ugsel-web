@@ -1,17 +1,18 @@
-# Base de Données
+# Database
 
-Le projet utilise une base relationnelle (SQLite en dev, PostgreSQL en prod).
+The project uses a relational database (SQLite in dev, PostgreSQL in production).
 
-## Modèles Principaux (`src.core.models`)
+## Main Templates (`src.core.models>)
 
-### Structure Sportive
-* **Sport** : L'activité racine (ex: "Judo", "Athlétisme").
-    * *Attributs* : `nom`, `caracteristique` (Indiv/Equipe).
-* **Epreuve** : Une sous-division du sport (ex: "100m", "Saut en hauteur").
-    * *Lien* : ForeignKey vers `Sport`.
-* **Competition** : L'événement physique (ex: "Départemental 2024").
-    * *Lien* : ManyToMany vers `Epreuve`.
-* **Championnat** : Le regroupement logique (ex: "National Athlé").
-    * *Lien* : ManyToMany vers `Competition`.
+### Sports Structure
+* **Sport**: The root activity (ex: "Judo", "Athletics").
+    * *Attributes* : `name`, `characteristic` (Indiv/Team).
+* **Event**: A subdivision of sport (ex: "100m", "High jump").
+    * *Link* : ForeignKey to `Sport`.
+* **Competition**: The physical event (e.g. "Departmental 2024").
+    * *Link* : ManyToMany to `Test`.
+* **Championship**: The logical grouping (e.g. "National Athletics").
+    * *Link* : ManyToMany towards `Competition`.
 
-[Retour à l'accueil](index.md)
+[Return to home page](index.md)
+

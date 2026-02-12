@@ -1,32 +1,32 @@
-# Bienvenue sur la documentation UGSEL Web
+# Welcome to the UGSEL Web documentation
 
-Ce projet est une application de gestion des compétitions sportives scolaires.
+This project is an application for managing school sports competitions.
 
-## Par où commencer ?
+## Where to start?
 
-Si vous êtes développeur ou correcteur, nous vous conseillons ce parcours :
+If you are a developer or proofreader, we recommend this path:
 
-1.  Comprendre nos choix techniques dans l'**[Architecture Logicielle](architecture.md)**.
-2.  Vérifier la robustesse du code via la **[Stratégie de Tests](tests.md)**.
-3.  Consulter le schéma des données dans la section **[Base de Données](database.md)**.
+1. Understand our technical choices in the**[Software Architecture](architecture.md)*.
+2. Check the code’s robustness via **[Testing Strategy](tests.md)*.
+3. View the data schema in section **[Database](database.md)*.
 
-Si vous êtes utilisateur, nous vous conseillons le **[Guide Utilisateur](user_guide.md)**.
+If you are a user, we recommend the **[User Guide](user_guide.md)*.
 
 ---
 
-## Fonctionnalités
-- Gestion des sports (Individuel / Équipe)
-- Gestion des compétitions et championnats
-- Import des élèves (CSV)
-- Interface d'administration complète
+## Features
+- Sports management (Individual / Team)
+- Management of competitions and championships
+- Import of students (CSV)
+- Complete administration interface
 
-## Stack Technique
+## Technical Stack
 - **Backend**: Django 5 + Python 3.12
-- **Base de données**: SQLite (Dev) / PostgreSQL (Prod)
+- **Database**: SQLite (Dev) / PostgreSQL (Prod)
 - **Tests**: Pytest, Playwright (E2E), Pytest-BDD
-- **Qualité**: Flake8, Black, Radon (A+)
+- **Quality**: Flake8, Black, Radon (A+)
 
-## Lancer le projet
+## Launch the project
 
 ```bash
 docker compose up --build
